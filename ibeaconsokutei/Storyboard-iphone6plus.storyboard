@@ -1,0 +1,318 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14C81f" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="YDr-jS-sWh">
+    <dependencies>
+        <deployment version="2048" identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="7jS-BX-C0M">
+            <objects>
+                <viewController useStoryboardIdentifierAsRestorationIdentifier="YES" id="YDr-jS-sWh" customClass="ViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="j8t-4K-5Rv"/>
+                        <viewControllerLayoutGuide type="bottom" id="P9w-eb-ix2"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="qeu-Va-VGj">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="SIZ-gN-ZgI" userLabel="beaconsTable">
+                                <rect key="frame" x="1" y="328" width="599" height="285"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="separatorColor" red="0.0078431372550000003" green="0.54117647059999996" blue="0.86274509799999999" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="sectionIndexColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="sectionIndexBackgroundColor" red="0.7019608021" green="0.7019608021" blue="0.7019608021" alpha="1" colorSpace="calibratedRGB"/>
+                                <variation key="widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="1" y="328" width="399" height="285"/>
+                                </variation>
+                                <connections>
+                                    <outlet property="dataSource" destination="YDr-jS-sWh" id="qpB-tx-s0d"/>
+                                    <outlet property="delegate" destination="YDr-jS-sWh" id="sSD-j0-ET6"/>
+                                </connections>
+                            </tableView>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Found Beacons (0)" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Znn-7y-1Js" userLabel="foundBeaconsLabel">
+                                <rect key="frame" x="19" y="298" width="212" height="31"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="7Ds-Se-ykd">
+                                <rect key="frame" x="163" y="121" width="208" height="46"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <state key="normal" title="Start/Stop Timer">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <variation key="widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="67" y="121" width="233" height="46"/>
+                                </variation>
+                                <connections>
+                                    <action selector="startTimer:" destination="YDr-jS-sWh" eventType="touchUpInside" id="kaB-ke-6K6"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="zxx-Vg-ve9">
+                                <rect key="frame" x="45" y="242" width="139" height="50"/>
+                                <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                <state key="normal" title="Set Coordinates">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <variation key="widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="19" y="242" width="156" height="50"/>
+                                </variation>
+                                <connections>
+                                    <segue destination="gdk-Ik-vXv" kind="presentation" id="a5e-rU-TfX"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Timer (sec):" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JfO-0B-0JF">
+                                <rect key="frame" x="45" y="40" width="133" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Coordinates (m):" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lq4-24-8VW">
+                                <rect key="frame" x="45" y="170" width="133" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="rpsTF" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="CEU-bj-SeN">
+                                <rect key="frame" x="186" y="80" width="185" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <variation key="widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="157" y="80" width="143" height="30"/>
+                                </variation>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="timerTF" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="o18-iI-d4Q">
+                                <rect key="frame" x="186" y="40" width="185" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <variation key="widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="157" y="40" width="143" height="30"/>
+                                </variation>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="One reading per:" textAlignment="center" lineBreakMode="wordWrap" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ETq-U9-UhX">
+                                <rect key="frame" x="45" y="80" width="133" height="31"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="sec" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sth-Gu-Bpn">
+                                <rect key="frame" x="375" y="80" width="42" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                                <variation key="widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="310" y="80" width="42" height="30"/>
+                                </variation>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="0XE-KX-Axn">
+                                <rect key="frame" x="282" y="242" width="128" height="50"/>
+                                <color key="backgroundColor" red="0.0" green="0.50196081400000003" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                <state key="normal" title="View Recorded Beacons">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <variation key="widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="212" y="242" width="144" height="50"/>
+                                </variation>
+                                <connections>
+                                    <segue destination="JlY-uj-Tfz" kind="presentation" id="nmF-gv-74d"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Map coordinates in meters" textAlignment="center" lineBreakMode="characterWrap" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jfU-rD-gbb" userLabel="coordinatesLabel">
+                                <rect key="frame" x="45" y="199" width="326" height="35"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <gestureRecognizers/>
+                    </view>
+                    <connections>
+                        <outlet property="beaconsFound" destination="Znn-7y-1Js" id="ad0-0b-Xmt"/>
+                        <outlet property="beaconsTableView" destination="SIZ-gN-ZgI" id="199-ZR-D5e"/>
+                        <outlet property="coordinatesLabel" destination="jfU-rD-gbb" id="vjp-Gw-hqS"/>
+                        <outlet property="rpsTF" destination="CEU-bj-SeN" id="nGn-pd-ceX"/>
+                        <outlet property="setCoordBtn" destination="zxx-Vg-ve9" id="3ke-nk-lDn"/>
+                        <outlet property="startAndStopTimerBtn" destination="7Ds-Se-ykd" id="ZxY-Bq-rNh"/>
+                        <outlet property="timerTF" destination="o18-iI-d4Q" id="IMX-3r-zdN"/>
+                        <outlet property="viewRecordBeaconsBtn" destination="0XE-KX-Axn" id="EfL-Kr-t0J"/>
+                        <segue destination="LFi-2t-puQ" kind="unwind" unwindAction="unwind:" id="vc2-RD-L7N"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="OlD-WE-G4e" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="LFi-2t-puQ" userLabel="Exit" sceneMemberID="exit"/>
+            </objects>
+            <point key="canvasLocation" x="57" y="304"/>
+        </scene>
+        <!--Log View Controller-->
+        <scene sceneID="GSE-Cm-yhu">
+            <objects>
+                <viewController useStoryboardIdentifierAsRestorationIdentifier="YES" id="JlY-uj-Tfz" customClass="LogViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Q4Z-7x-jMo"/>
+                        <viewControllerLayoutGuide type="bottom" id="jwA-6o-xhX"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="vda-pC-skm">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" keyboardDismissMode="interactive" translatesAutoresizingMaskIntoConstraints="NO" id="5VA-H4-RPc">
+                                <rect key="frame" x="0.0" y="107" width="600" height="493"/>
+                                <subviews>
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" editable="NO" text="Beacon Data" translatesAutoresizingMaskIntoConstraints="NO" id="33M-da-JFO">
+                                        <rect key="frame" x="0.0" y="0.0" width="599" height="493"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                        <variation key="widthClass=compact" fixedFrame="YES">
+                                            <rect key="frame" x="0.0" y="0.0" width="401" height="493"/>
+                                        </variation>
+                                    </textView>
+                                </subviews>
+                                <variation key="widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="0.0" y="107" width="400" height="493"/>
+                                </variation>
+                            </scrollView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xB3-af-Nnu">
+                                <rect key="frame" x="430" y="39" width="123" height="51"/>
+                                <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <state key="normal" title="Done">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleShadowColor" red="0.60000002379999995" green="0.60000002379999995" blue="0.60000002379999995" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <variation key="widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="289" y="39" width="95" height="51"/>
+                                </variation>
+                                <connections>
+                                    <segue destination="etV-8P-gIa" kind="unwind" unwindAction="unwind:" id="hR2-TN-yjb"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="f30-0J-Rj1">
+                                <rect key="frame" x="227" y="39" width="147" height="51"/>
+                                <color key="backgroundColor" red="0.0" green="0.25098040700000002" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <state key="normal" title="Save Prediction">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <variation key="widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="149" y="39" width="118" height="51"/>
+                                </variation>
+                                <connections>
+                                    <action selector="savePredictLocation:" destination="JlY-uj-Tfz" eventType="touchUpInside" id="RG4-2f-uHw"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="g9v-nc-Zy2">
+                                <rect key="frame" x="26" y="39" width="144" height="51"/>
+                                <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <state key="normal" title="Save Beacons">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <variation key="widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="13" y="39" width="117" height="51"/>
+                                </variation>
+                                <connections>
+                                    <action selector="saveBeaconData:" destination="JlY-uj-Tfz" eventType="touchUpInside" id="mbf-fP-M86"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <connections>
+                        <outlet property="doneButton" destination="xB3-af-Nnu" id="AQS-dj-RYU"/>
+                        <outlet property="logTextView" destination="33M-da-JFO" id="dwZ-3X-MLK"/>
+                        <outlet property="saveBeaconData" destination="g9v-nc-Zy2" id="bmq-OJ-EvT"/>
+                        <outlet property="savePredictLocation" destination="f30-0J-Rj1" id="nCi-Kc-O6p"/>
+                        <segue destination="etV-8P-gIa" kind="unwind" unwindAction="unwind:" id="ewm-zQ-Hz9"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ChF-9F-FKq" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="etV-8P-gIa" userLabel="Exit" sceneMemberID="exit"/>
+            </objects>
+            <point key="canvasLocation" x="906" y="304"/>
+        </scene>
+        <!--Map View Controller-->
+        <scene sceneID="gMD-wD-X8O">
+            <objects>
+                <viewController useStoryboardIdentifierAsRestorationIdentifier="YES" id="gdk-Ik-vXv" customClass="MapViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="CJG-XP-s8s"/>
+                        <viewControllerLayoutGuide type="bottom" id="vn2-9s-Ze1"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="XsQ-y5-BJx">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oYV-ok-Zfp">
+                                <rect key="frame" x="189" y="557" width="222" height="35"/>
+                                <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                <state key="normal" title="Done">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <variation key="widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="89" y="552" width="222" height="35"/>
+                                </variation>
+                                <connections>
+                                    <segue destination="haa-iD-nKz" kind="unwind" unwindAction="unwind:" id="x4Z-dp-KLh"/>
+                                </connections>
+                            </button>
+                            <imageView contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="edited-ibeacon-map.png" translatesAutoresizingMaskIntoConstraints="NO" id="fQe-vf-vsr">
+                                <rect key="frame" x="106" y="0.0" width="376" height="526"/>
+                                <gestureRecognizers/>
+                                <variation key="widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="0.0" y="0.0" width="400" height="517"/>
+                                </variation>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="CEs-IP-lmy" appends="YES" id="Ir3-Sd-OFY"/>
+                                </connections>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Tap Map to Select Coordinates" textAlignment="center" lineBreakMode="characterWrap" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UTi-YU-XpB">
+                                <rect key="frame" x="148" y="531" width="288" height="24"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                                <variation key="widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="64" y="520" width="288" height="24"/>
+                                </variation>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <connections>
+                        <outlet property="Done" destination="oYV-ok-Zfp" id="wY8-FA-qdQ"/>
+                        <outlet property="coordinatesLabel" destination="UTi-YU-XpB" id="zSu-UO-UpK"/>
+                        <outlet property="mapImageView" destination="fQe-vf-vsr" id="2dZ-az-466"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="hKQ-Q9-eFS" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="haa-iD-nKz" userLabel="Exit" sceneMemberID="exit"/>
+                <pinchGestureRecognizer id="BQ9-BI-9ho">
+                    <connections>
+                        <action selector="handlePinch:" destination="gdk-Ik-vXv" id="7Zu-ee-Rp7"/>
+                    </connections>
+                </pinchGestureRecognizer>
+                <panGestureRecognizer minimumNumberOfTouches="1" id="UHr-NM-NKG">
+                    <connections>
+                        <action selector="handlePan:" destination="gdk-Ik-vXv" id="aa5-RW-oGT"/>
+                    </connections>
+                </panGestureRecognizer>
+                <tapGestureRecognizer id="CEs-IP-lmy">
+                    <connections>
+                        <action selector="handleTap:" destination="gdk-Ik-vXv" id="Tgt-RY-fq1"/>
+                    </connections>
+                </tapGestureRecognizer>
+            </objects>
+            <point key="canvasLocation" x="57" y="1106"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="edited-ibeacon-map.png" width="538" height="1025"/>
+    </resources>
+</document>

@@ -1,0 +1,349 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14D72i" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
+    </dependencies>
+    <scenes>
+        <!--Map View Controller-->
+        <scene sceneID="KJ5-a0-GHR">
+            <objects>
+                <viewController id="P3d-Mm-mu2" customClass="MapViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Hux-jv-xsf"/>
+                        <viewControllerLayoutGuide type="bottom" id="GTz-F1-6ET"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Nxn-Mg-aSe">
+                        <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Tap Map to Select Coordinates" textAlignment="center" lineBreakMode="characterWrap" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IRm-bP-6Cn">
+                                <rect key="frame" x="240" y="957" width="288" height="24"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="piv-fK-sq7">
+                                <rect key="frame" x="284" y="984" width="215" height="35"/>
+                                <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                <state key="normal" title="Done">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="67h-Xf-LPU" kind="unwind" unwindAction="unwind:" id="DR3-fv-3KL"/>
+                                </connections>
+                            </button>
+                            <imageView contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="edited-ibeacon-map.png" translatesAutoresizingMaskIntoConstraints="NO" id="dWx-xh-DXw">
+                                <rect key="frame" x="0.0" y="18" width="768" height="935"/>
+                                <gestureRecognizers/>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="AxA-mb-XKR" appends="YES" id="xGN-GC-j1N"/>
+                                </connections>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="iPad"/>
+                    <connections>
+                        <outlet property="Done" destination="piv-fK-sq7" id="dT7-iL-Gr7"/>
+                        <outlet property="coordinatesLabel" destination="IRm-bP-6Cn" id="9Rh-mh-PgR"/>
+                        <outlet property="mapImageView" destination="dWx-xh-DXw" id="mf0-V8-xa9"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="flt-uK-UVX" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="67h-Xf-LPU" userLabel="Exit" sceneMemberID="exit"/>
+                <pinchGestureRecognizer id="USe-dJ-xof">
+                    <connections>
+                        <action selector="handlePinch:" destination="P3d-Mm-mu2" id="XtV-YH-ANI"/>
+                    </connections>
+                </pinchGestureRecognizer>
+                <panGestureRecognizer minimumNumberOfTouches="1" id="1br-MR-mSY">
+                    <connections>
+                        <action selector="handlePan:" destination="P3d-Mm-mu2" id="wdj-h7-kco"/>
+                    </connections>
+                </panGestureRecognizer>
+                <tapGestureRecognizer id="AxA-mb-XKR">
+                    <connections>
+                        <action selector="handleTap:" destination="P3d-Mm-mu2" id="uij-XF-gbX"/>
+                    </connections>
+                </tapGestureRecognizer>
+            </objects>
+            <point key="canvasLocation" x="-31" y="1333"/>
+        </scene>
+        <!--Pred Loc Map View Controller-->
+        <scene sceneID="qnL-Vr-nuk">
+            <objects>
+                <viewController useStoryboardIdentifierAsRestorationIdentifier="YES" id="ZtC-Pq-5Md" customClass="PredLocMapViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="t21-J6-wT2"/>
+                        <viewControllerLayoutGuide type="bottom" id="zfa-uG-NRR"/>
+                    </layoutGuides>
+                    <view key="view" multipleTouchEnabled="YES" contentMode="scaleToFill" id="CQR-w4-fuz">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="edited-ibeacon-map.png" translatesAutoresizingMaskIntoConstraints="NO" id="e3u-MP-Joe">
+                                <rect key="frame" x="0.0" y="1" width="600" height="514"/>
+                                <gestureRecognizers/>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="dTz-jf-3PY" appends="YES" id="Xi2-YW-gfA"/>
+                                </connections>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Tap to set LearnXY Coordinates" lineBreakMode="wordWrap" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsLetterSpacingToFitWidth="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cvv-Ra-cxB">
+                                <rect key="frame" x="118" y="515" width="384" height="34"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ILE-xD-MIW">
+                                <rect key="frame" x="522" y="562" width="47" height="30"/>
+                                <state key="normal" title="Done">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="hDd-Qf-MjK" kind="unwind" unwindAction="unwind:" id="Dpz-Po-Fe0"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qzC-RT-nkv">
+                                <rect key="frame" x="386" y="562" width="72" height="30"/>
+                                <state key="normal" title="Predict">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="predictBtnPress:" destination="ZtC-Pq-5Md" eventType="touchUpInside" id="HMA-e1-uAA"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="daw-gh-rd4">
+                                <rect key="frame" x="135" y="562" width="89" height="30"/>
+                                <state key="normal" title="LearnXY">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="learnXYBtnPress:" destination="ZtC-Pq-5Md" eventType="touchUpInside" id="YW2-U7-o8Y"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DRI-Xj-Jii">
+                                <rect key="frame" x="49" y="562" width="46" height="30"/>
+                                <state key="normal" title="Save">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="saveBtnPressSoinn:" destination="ZtC-Pq-5Md" eventType="touchUpInside" id="4o2-TN-ugm"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="OMr-fn-3YH">
+                                <rect key="frame" x="259" y="562" width="86" height="30"/>
+                                <state key="normal" title="Learn ">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="learnBtnPress:" destination="ZtC-Pq-5Md" eventType="touchUpInside" id="jv4-kl-XT2"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <connections>
+                        <outlet property="predMapImageView" destination="e3u-MP-Joe" id="Lkk-zT-x5f"/>
+                        <outlet property="predictedCoordLabel" destination="cvv-Ra-cxB" id="K4b-l2-pnN"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="8UC-aE-qZ4" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="hDd-Qf-MjK" userLabel="Exit" sceneMemberID="exit"/>
+                <tapGestureRecognizer id="dTz-jf-3PY">
+                    <connections>
+                        <action selector="handleTap:" destination="ZtC-Pq-5Md" id="kGM-aN-kV2"/>
+                    </connections>
+                </tapGestureRecognizer>
+            </objects>
+            <point key="canvasLocation" x="868" y="1025"/>
+        </scene>
+        <!--Log View Controller-->
+        <scene sceneID="93h-Ta-hkU">
+            <objects>
+                <viewController useStoryboardIdentifierAsRestorationIdentifier="YES" id="5f4-Qr-Tez" customClass="LogViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="RGO-EG-NaZ"/>
+                        <viewControllerLayoutGuide type="bottom" id="dyb-Ww-XmU"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="dih-aI-hoe">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" keyboardDismissMode="interactive" translatesAutoresizingMaskIntoConstraints="NO" id="Tc3-Cs-DYx">
+                                <rect key="frame" x="0.0" y="95" width="601" height="512"/>
+                                <subviews>
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" editable="NO" text="Beacon Data" translatesAutoresizingMaskIntoConstraints="NO" id="Vf7-de-nPB">
+                                        <rect key="frame" x="0.0" y="0.0" width="601" height="504"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                    </textView>
+                                </subviews>
+                            </scrollView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="MfE-KT-RLg">
+                                <rect key="frame" x="57" y="36" width="107" height="45"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <state key="normal" title="Save Beacons"/>
+                                <connections>
+                                    <action selector="saveBeaconData:" destination="5f4-Qr-Tez" eventType="touchUpInside" id="LnB-ER-dMA"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="kYP-4h-ICZ">
+                                <rect key="frame" x="329" y="36" width="110" height="45"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <state key="normal" title="SOINN Predict">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="sendLocationDataForSoinnPredict:" destination="5f4-Qr-Tez" eventType="touchUpInside" id="3Sy-NW-ONG"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="rMk-72-BaT">
+                                <rect key="frame" x="191" y="36" width="96" height="45"/>
+                                <state key="normal" title="SOINN Learn ">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="sendLocationDataSoinnLearnXY:" destination="5f4-Qr-Tez" eventType="touchUpInside" id="jl3-gE-Ubk"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gvI-BY-5by">
+                                <rect key="frame" x="478" y="36" width="65" height="45"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                <state key="normal" title="Done"/>
+                                <connections>
+                                    <segue destination="Zz8-88-IuD" kind="unwind" unwindAction="unwind:" id="WMs-DR-QWi"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <connections>
+                        <outlet property="doneButton" destination="gvI-BY-5by" id="6C3-ca-af3"/>
+                        <outlet property="logTextView" destination="Vf7-de-nPB" id="kpJ-d5-GbM"/>
+                        <outlet property="saveBeaconData" destination="MfE-KT-RLg" id="jUq-nX-GtW"/>
+                        <outlet property="soinnPredictLocBtn" destination="kYP-4h-ICZ" id="itt-Ka-TNS"/>
+                        <segue destination="Zz8-88-IuD" kind="unwind" unwindAction="unwind:" id="H1Z-a4-EJB"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="jEI-Bw-Qyk" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="Zz8-88-IuD" userLabel="Exit" sceneMemberID="exit"/>
+            </objects>
+            <point key="canvasLocation" x="858" y="118"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="Mhn-Yo-zV8">
+            <objects>
+                <viewController useStoryboardIdentifierAsRestorationIdentifier="YES" id="WEM-ub-FUm" customClass="ViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="NWg-Pd-ysK"/>
+                        <viewControllerLayoutGuide type="bottom" id="acu-z5-vdm"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="GVe-cC-Gt6">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="jbd-MS-cc4" userLabel="beaconsTable">
+                                <rect key="frame" x="1" y="335" width="320" height="267"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="separatorColor" red="0.0078431372550000003" green="0.54117647059999996" blue="0.86274509799999999" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="sectionIndexColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="sectionIndexBackgroundColor" red="0.7019608021" green="0.7019608021" blue="0.7019608021" alpha="1" colorSpace="calibratedRGB"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="WEM-ub-FUm" id="THz-Sk-07X"/>
+                                    <outlet property="delegate" destination="WEM-ub-FUm" id="U4S-fD-Bf7"/>
+                                </connections>
+                            </tableView>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Map coordinates in meters" textAlignment="center" lineBreakMode="characterWrap" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3Sa-Tq-prY" userLabel="coordinatesLabel">
+                                <rect key="frame" x="16" y="202" width="291" height="35"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Found Beacons (0)" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pSD-7Z-bIv" userLabel="foundBeaconsLabel">
+                                <rect key="frame" x="19" y="303" width="212" height="31"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="Kju-nK-2Oy">
+                                <rect key="frame" x="16" y="117" width="126" height="41"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <state key="normal" title="Start/Stop Timer">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="startTimer:" destination="WEM-ub-FUm" eventType="touchUpInside" id="bTZ-w9-Eak"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Timer (sec):" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="q1x-8Y-z3D">
+                                <rect key="frame" x="15" y="29" width="134" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Coordinates (m):" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="z5a-1p-09h">
+                                <rect key="frame" x="16" y="171" width="136" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="rpsTF" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="QdP-fv-oY3">
+                                <rect key="frame" x="155" y="69" width="108" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="One reading per:" textAlignment="center" lineBreakMode="wordWrap" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="g3U-t5-mn0">
+                                <rect key="frame" x="15" y="69" width="134" height="31"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="sec" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="u42-sH-ory">
+                                <rect key="frame" x="265" y="69" width="39" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="CM0-6F-IIF">
+                                <rect key="frame" x="159" y="113" width="145" height="44"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                <state key="normal" title="Recorded Beacons"/>
+                            </button>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="timerTF" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="lx6-aZ-ELJ">
+                                <rect key="frame" x="155" y="29" width="108" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="EMh-Lw-kBc">
+                                <rect key="frame" x="89" y="245" width="128" height="42"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                <state key="normal" title="Map Coordinates"/>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <gestureRecognizers/>
+                    </view>
+                    <connections>
+                        <outlet property="beaconsFound" destination="pSD-7Z-bIv" id="kJV-Q9-mhj"/>
+                        <outlet property="beaconsTableView" destination="jbd-MS-cc4" id="A53-OW-lCX"/>
+                        <outlet property="coordinatesLabel" destination="3Sa-Tq-prY" id="JOR-3b-aAI"/>
+                        <outlet property="rpsTF" destination="QdP-fv-oY3" id="9NU-JY-cg6"/>
+                        <outlet property="setCoordBtn" destination="EMh-Lw-kBc" id="4Ly-Vr-OTC"/>
+                        <outlet property="startAndStopTimerBtn" destination="Kju-nK-2Oy" id="VsT-BE-jeP"/>
+                        <outlet property="timerTF" destination="lx6-aZ-ELJ" id="vr1-q2-XeL"/>
+                        <outlet property="viewRecordBeaconsBtn" destination="CM0-6F-IIF" id="X5D-O8-kJ6"/>
+                        <segue destination="Lc1-27-XC3" kind="unwind" unwindAction="unwind:" id="xXq-7S-uLr"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="FNn-5A-6DW" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="Lc1-27-XC3" userLabel="Exit" sceneMemberID="exit"/>
+            </objects>
+            <point key="canvasLocation" x="-115" y="256"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="edited-ibeacon-map.png" width="538" height="1025"/>
+    </resources>
+</document>
