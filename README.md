@@ -1,6 +1,9 @@
 # ibeacon-sokutei-ios
 ibeacon and wifi detection app for ios
 
+References:
+https://github.com/nicktoumpelis/HiBeacons (referenced objective-c version)
+
 <!-- 
 <img src="https://raw.githubusercontent.com/kphongagsorn/ibeacon-sokutei-ios/master/images/IMG_0006.PNG" data-canonical-src="https://raw.githubusercontent.com/kphongagsorn/ibeacon-sokutei-ios/master/images/IMG_0006.PNG" width="300" height="550">
 
