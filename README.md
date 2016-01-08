@@ -1,7 +1,7 @@
 # ibeacon-sokutei-ios
 ibeacon and wifi detection app for ios
 
-*Currently source code is somewhat messy, I will clean this up when I get the chance, sorry.
+*Currently source code is somewhat messy. I will clean this up when I get the chance, sorry.
 
 References:
 https://github.com/nicktoumpelis/HiBeacons (referenced objective-c version)
