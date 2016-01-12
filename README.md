@@ -9,7 +9,7 @@ References:
 https://github.com/nicktoumpelis/HiBeacons (referenced objective-c version)
 
 ##App Images
-<img src="https://github.com/kphongagsorn/ibeacon-sokutei-ios/blob/master/images/IMG_0006.PNG" data-canonical-src="https://github.com/kphongagsorn/ibeacon-sokutei-ios/blob/master/images/IMG_0006.PNG" width="200" height="400"/><br>
+<!--<img src="https://github.com/kphongagsorn/ibeacon-sokutei-ios/blob/master/images/IMG_0006.PNG" data-canonical-src="https://github.com/kphongagsorn/ibeacon-sokutei-ios/blob/master/images/IMG_0006.PNG" width="200" height="400"/><br> -->
 <img src="https://github.com/kphongagsorn/ibeacon-sokutei-ios/blob/master/images/IMG_0007.PNG" data-canonical-src="https://github.com/kphongagsorn/ibeacon-sokutei-ios/blob/master/images/IMG_0007.PNG" width="200" height="400"/><br>
 <img src="https://github.com/kphongagsorn/ibeacon-sokutei-ios/blob/master/images/IMG_0008.PNG" data-canonical-src="https://github.com/kphongagsorn/ibeacon-sokutei-ios/blob/master/images/IMG_0008.PNG" width="200" height="400" /><br>
 <img src="https://github.com/kphongagsorn/ibeacon-sokutei-ios/blob/master/images/IMG_0009.PNG" data-canonical-src="https://github.com/kphongagsorn/ibeacon-sokutei-ios/blob/master/images/IMG_0009.PNG" width="200" height="400"/><br>
